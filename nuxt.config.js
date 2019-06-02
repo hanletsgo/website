@@ -23,6 +23,14 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  manifest: {
+    name: '挺韓 選總統 ｜ 後援網站',
+    short_name: '挺韓 選總統',
+    description: '台灣安全 人民有錢',
+    lang: 'zh-TW',
+    background_color: '#ff0000'
+  },
+
   /*
    ** Customize the progress-bar color
    */

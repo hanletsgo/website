@@ -23,13 +23,11 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-$s-media: 414px;
-$m-media: 768px;
-$l-media: 1280px;
-
 $gap: 20px;
 
 .container {
+  user-select: none;
+
   margin: 0 auto;
   min-height: 100vh;
   min-width: 100vw;
@@ -38,6 +36,7 @@ $gap: 20px;
   align-items: center;
   text-align: center;
 
+  color: white;
   background-color: red;
   overflow: hidden;
 
@@ -130,7 +129,7 @@ h1 {
 }
 
 .content {
-  background-color: white;
+  // background-color: white;
   width: 768px;
   // height: 450px;
   // height: 768px * 0.56;

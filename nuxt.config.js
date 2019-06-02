@@ -49,11 +49,18 @@ export default {
         pixelId: '2269239943320587'
       }
     ],
+    '@nuxtjs/style-resources',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/google-gtag',
     '@nuxtjs/pwa'
   ],
+
+  styleResources: {
+    // :warning: You cannot use path aliases here (~ and @)
+    scss: ['./assets/*.scss']
+  },
+
   /*
    ** Axios module configuration
    */

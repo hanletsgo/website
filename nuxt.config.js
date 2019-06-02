@@ -39,6 +39,12 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    [
+      'nuxt-facebook-pixel-module',
+      {
+        pixelId: '2269239943320587'
+      }
+    ],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/google-gtag',

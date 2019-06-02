@@ -5,7 +5,7 @@
       <img src="@/assets/han.png" alt="" />
     </div>
 
-    <h1 class="name">韓國瑜</h1>
+    <h1 class="name" @click="goHome">韓國瑜</h1>
     <h1 class="action">選 總統</h1>
 
     <nav class="menu">
@@ -19,7 +19,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    goHome() {
+      this.$router.push({ path: '/' })
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -75,6 +81,8 @@ h1 {
 
   &.name {
     position: fixed;
+
+    cursor: pointer;
 
     font-size: 10vw;
 

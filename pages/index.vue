@@ -1,67 +1,195 @@
 <template>
   <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        website
-      </h1>
-      <h2 class="subtitle">
-        Han LetsGo
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
+    <div></div>
+    <div class="man">
+      <img src="@/assets/han.png" alt="" />
     </div>
+
+    <h1 class="name">韓國瑜</h1>
+    <h1 class="action">選 總統</h1>
+
+    <nav class="menu">
+      <nuxt-link to="/support">我要表示支持！</nuxt-link>
+      <nuxt-link to="/resources">韓粉資源整理</nuxt-link>
+      <a href="mailto:han.lets.go@gmail.com">回報</a>
+    </nav>
+
+    <nuxt-child class="content" />
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
+export default {}
 </script>
 
-<style>
+<style lang="scss" scoped>
+$s-media: 414px;
+$m-media: 768px;
+$l-media: 1280px;
+
+$gap: 20px;
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  background-color: red;
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+.man {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+
+  width: 85vw;
+  margin-left: -10vh;
+  margin-bottom: -3%;
+
+  pointer-events: none;
+
+  z-index: 200;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+h1 {
+  font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
   letter-spacing: 1px;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
+
+  z-index: 300;
+
+  &.name {
+    position: fixed;
+
+    font-size: 10vw;
+
+    top: 20px;
+    left: 5vw;
+  }
+
+  &.action {
+    position: fixed;
+
+    font-size: 15vw;
+
+    bottom: 20px;
+    right: 5vw;
+  }
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.menu {
+  position: fixed;
+
+  line-height: 10vw;
+  top: $gap;
+  right: 15vw;
+
+  font-size: 30px;
+  color: white;
+
+  z-index: 300;
+
+  a {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    margin: 0px 20px;
+  }
+
+  @media all and (max-width: $l-media) {
+    right: 3vw;
+    font-size: 26px;
+
+    a {
+      margin: 0px 10px;
+    }
+  }
+
+  @media all and (max-width: $m-media + $gap) {
+    top: $gap + 80px;
+    right: $gap;
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
-.links {
-  padding-top: 15px;
+.content {
+  background-color: white;
+  width: 768px;
+  // height: 450px;
+  // height: 768px * 0.56;
+  height: 768px * 0.6;
+
+  position: absolute;
+  right: $gap;
+  top: calc(10vw + #{$gap});
+
+  z-index: 100;
+
+  @media all and (min-width: $l-media) {
+    top: calc(10vw - #{$gap});
+  }
+
+  @media all and (max-width: $m-media + $gap) {
+    top: calc(10vw + 120px);
+
+    right: 0px;
+    width: 100vw;
+    height: 100vw * 0.6;
+  }
+}
+
+@media all and (max-width: $s-media) {
+  h1 {
+    &.name {
+      font-size: 64px;
+    }
+
+    &.action {
+      font-size: 84px;
+    }
+  }
+
+  .menu {
+    font-size: 16px;
+
+    a {
+      margin: 0px 5px;
+    }
+  }
+
+  .man {
+    right: 0px;
+    left: unset;
+
+    height: 50vh;
+    width: 100vw;
+
+    margin-left: -10vh;
+    margin-bottom: -3%;
+
+    z-index: 200;
+
+    img {
+      max-height: 100%;
+      max-width: unset;
+    }
+  }
 }
 </style>

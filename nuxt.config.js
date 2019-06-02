@@ -1,5 +1,8 @@
 import pkg from './package'
 
+// eslint-disable-next-line no-unused-vars
+const isDev = process.env.NODE_ENV === 'development'
+
 export default {
   mode: 'universal',
 
@@ -42,6 +45,7 @@ export default {
     [
       'nuxt-facebook-pixel-module',
       {
+        disabled: isDev,
         pixelId: '2269239943320587'
       }
     ],

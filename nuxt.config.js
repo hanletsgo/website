@@ -37,6 +37,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/google-gtag',
     '@nuxtjs/pwa'
   ],
   /*
@@ -44,6 +45,16 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  'google-gtag': {
+    id: 'UA-141289431-1', // required
+    debug: true, // enable to track in dev mode
+    config: {
+      // this are the config options for `gtag
+      // check out official docs: https://developers.google.com/analytics/devguides/collection/gtagjs/
+      // send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+    }
   },
 
   /*

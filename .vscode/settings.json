@@ -1,0 +1,5 @@
+{
+  "debug.node.autoAttach": "on",
+  "eslint.validate": ["javascript", "html", { "language": "vue", "autoFix": true }],
+  "eslint.autoFixOnSave": true,
+}
